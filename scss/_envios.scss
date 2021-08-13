@@ -269,14 +269,3 @@ article div {
     background-color: whitesmoke;
 }
 
-$Envios: ( 
-        Azul: #074e85,
-        OLAVARRIA-TANDIL-RAUCH:  #14b41c,
-        RESTO-DEL-PAIS: #C25E30
-); 
-/*Creamos el bucle para usar los valores del mapa*/
-@each $Envio, $color in $Envios {
-   .btn--#{$Envio} {
-       background-color: $color;
-   }
-}
