@@ -1,0 +1,282 @@
+* {
+    Margin:0;
+    padding:0;
+ }
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    text-align: left;
+    color: olivedrab;
+    background-color: whitesmoke;
+    opacity: .85;
+    width: 400px;
+    height: 65px;
+    font-family: 'oswald';
+    letter-spacing: 1px;
+}
+
+.header {
+    background-image: url(../Images/Fondo1.jpg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.body {
+    background-color: olivedrab;
+}
+
+.divEncabezado {
+    background-color: white;
+    color: olivedrab;
+    text-align: center;
+    font-family: 'antonio';
+    height: 30px;
+    padding: 2px 0px 5px 0px;
+    letter-spacing: 2px;
+}
+
+.divLogo {
+    display: inline-block;
+    border-radius: 200px;
+    overflow: hidden;
+}
+
+.divTitulo{
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+    margin: 20px;
+}
+
+.divRedes{
+    display: flex; 
+    flex-direction: column;
+}
+
+.h11 {
+    color: rgb(29, 27, 27);
+    text-align: center;
+    font-size: 80px;
+    text-shadow: 2px 2px whitesmoke;
+    font-family: 'antonio';
+    text-transform: uppercase;
+}
+
+.nav {
+    font-weight: bolder;
+    background-color: white;
+    display: flex; 
+    justify-content: space-around; 
+    height: 40px;
+    font-family: 'antonio';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 4px;
+}
+
+.menuDesplegable {
+    background-color: white;
+}    
+
+.garrapiñadas {
+    color: olivedrab;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navUl {
+    color: olivedrab;
+    font-weight: bolder;
+    text-decoration: none;
+    background-color: white;
+    height: 35px;
+    font-family: 'antonio';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 4px;
+}
+
+.h2 {
+    background-color: white;
+    color: olivedrab;
+    height: 50px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'oswald';
+    padding-bottom: 15px;
+}
+
+.h3 {
+    background-color: white;
+    color: olivedrab;
+    height: 50px;
+    width: 25%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'oswald';
+    padding: 5px;
+    margin-left: 500px;
+}
+
+.imagenEnvios {
+    background-image: url(../Images/envios.jpg.jpg);
+    align-items: top;
+    height: 700px;
+}
+
+.footer {
+    background-image: url(../Images/Fondo2.jpg);
+    background-size: cover;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 20px;
+}
+
+.form   {
+    text-align: right;
+    width: 370px;
+    background-color: whitesmoke;
+    padding: 0px 10px 5px 10px;
+    opacity: .90;
+    font-family: 'oswald';
+    color: olivedrab;
+    letter-spacing: 1px;
+    
+}
+
+.contacto{
+    text-align: center;
+}
+
+.p {
+    font-size: 25px;
+    line-height: 1.5;
+    text-align: justify;
+    display: inline-block;
+    height: 300px;
+    width: 50%;
+    padding: 40px 0px 40px 40px;
+    font-family: 'oswald';
+    color: whitesmoke;
+}
+
+.imagenCarrete{
+    margin: 50px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.imagenProductos{
+    padding: 20px 5px 20px 5px;
+    border: solid whitesmoke;
+    display: inline-block;
+    text-align: center;
+    margin: 20px 25px 20px 35px;
+    border-radius: 20px;
+    font-family: 'oswald';
+    color: whitesmoke;
+    letter-spacing: 1px;
+}
+
+.divBoton {
+    text-decoration: none;
+    display: inline-flex;
+    background-image: linear-gradient(to left, olivedrab, black);
+    margin: 20px;
+    padding: 10px;
+    font-family: 'antonio';
+    border-radius: 50px;
+    color: whitesmoke
+
+}
+
+.quienesSomos {
+    background-image: url(../Images/fondo-quienes.jpg);
+    background-size: cover;
+    background-position: right center;
+}
+
+.divForm {
+    display: inline-block;
+    background-color: whitesmoke;
+    padding: 6px;
+    font-family: 'antonio';
+    border-radius: 20px;
+    width: 200px;
+}
+
+ul {
+    list-style: none;
+    
+ }
+
+li {
+    display: inline-block;
+    position:relative;
+    margin-right: 70px;
+    margin-top: 5px;
+ }
+
+ul ul {
+    position: absolute;
+    display: none;
+ }
+
+ul ul li {
+    display: block;
+ }
+
+ul li:hover ul {
+    display:block;
+ }
+ 
+ @media only screen and (max-width: 768px) {
+	.media {
+            background-color: rgb(42, 39, 204);
+            
+      }
+}
+
+.expandir:hover {
+    transform: scale(1.1,1.1);
+}
+
+.rotar:hover {
+    transform: rotateZ(360deg);
+    transition: 2s;
+}
+
+.d-block { 
+    padding: 50px !important;
+    width: 100%;
+}
+
+.carouselExampleIndicators {
+    max-width: 100% !important;
+}
+
+article div {
+    margin: 70px 0px 70px;
+    background-color: whitesmoke;
+}
+
+$Envios: ( 
+        Azul: #074e85,
+        OLAVARRIA-TANDIL-RAUCH:  #14b41c,
+        RESTO-DEL-PAIS: #C25E30
+); 
+/*Creamos el bucle para usar los valores del mapa*/
+@each $Envio, $color in $Envios {
+   .btn--#{$Envio} {
+       background-color: $color;
+   }
+}
