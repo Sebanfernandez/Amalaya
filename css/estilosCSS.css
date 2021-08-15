@@ -225,9 +225,6 @@ ul li:hover ul {
 .carouselExampleIndicators {
   max-width: 100% !important; }
 
-article div {
-  margin: 70px 0px 70px;
-  background-color: whitesmoke; }
 
 /*Creamos el bucle para usar los valores del mapa*/
 .btn--Azul {
