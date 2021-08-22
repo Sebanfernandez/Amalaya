@@ -24,10 +24,10 @@
 
         <div class="divTitulo"><!--Cambie la class x BEM-->
             <div class="divLogo rotar">
-                <img src="Images/Logo-amalaya.jpeg" alt="">
+                <img src="Images/Logo-amalaya.png" alt="..." class="img-circle">
             </div>
             <div>
-                <h1 class="h11">AMALAYA TIENDA GOURMET</h1>
+                <h1 class="h11 ">AMALAYA TIENDA GOURMET</h1>
             </div>
             <nav class="divRedes"><!--Cambie la class x BEM-->
                 <nav>
@@ -93,10 +93,10 @@
 
         <section class="quienesSomos"><!--Cambie la class x BEM-->
             <h2 class="quienesSomos__Titulo">Quienes Somos</h2><!--Cambie la class x BEM-->
-            <div class="p pt-3 mb-3">
-                <p >Somos apasionados por la cocina, y por eso decidimos comenzar este emprendimiento comercializando
+            <div class="p pt-5 mb-2">
+                <p class="pb-4">Somos apasionados por la cocina, y por eso decidimos comenzar este emprendimiento comercializando
                     Productos Gourmet y Delicatessen de alta calidad dirigidos a paladares exigentes.</p>
-                <p>Hacemos hincapié en brindar productos fieles a su origen, manteniendo la frescura, para aquellos
+                <p >Hacemos hincapié en brindar productos fieles a su origen, manteniendo la frescura, para aquellos
                     consumidores que predican la vida saludable, brindando a su mesa un toque de distinción inigualable.
                 </p>
             </div>
@@ -150,7 +150,7 @@
     </main>
 
     <footer class="footer">
-        <div>
+        <div class="mt-4">
             <div class="container">
                 <h2>Contactanos</h2>
             </div>
@@ -166,24 +166,30 @@
                 <img src="Images/insta1.png" width="30" height="30">
                 <h3>Instagram: @Amalayatiendagourmet</h3>
             </div>
-        </div>
-        <form>
+            </div>
+           
+           <div>
+             <img class="m-5 " src="/Images/Logo-amalaya.png" alt="">
+           </div>
+           <div>
+        <form class="divForm mt-4">
             <div class="mb-2">
-              <label for="nombre_apellido" class="form-label text-white fs-5">Nombre Completo</label>
+              <label for="nombre_apellido" class="form-label text-black fs-5">Nombre Completo</label>
               <input type="text" id="nombre" name="nombre_apellido" class="form-control" placeholder="Ingresa tu nombre completo">
             </div>
             <div class="mb-3">
-              <label for="Localidad" class="form-label text-white fs-5">Localidad</label>
+              <label for="Localidad" class="form-label text-black fs-5">Localidad</label>
               <select id="disabledSelect" class="form-select">
                 <option value="AZ">AZUL</option>
                 <option value="OTR">OLAVARRIA-TANDIL-RAUCH</option>
                 <option value="AR">RESTO DEL PAIS</option>
               </select>
               <div>
-                <textarea type="text" name="comentario" placeholder="Ingresa tu comentario" cols="40" rows="5"></textarea>
+                <textarea type="text" name="comentario" placeholder="Ingresa tu comentario" cols="50" rows="5"></textarea>
             </div>
             <button type="enviar" class="btn btn-success">Enviar</button>
-        </form>    
+        </form> 
+        </div>   
       </footer>
     <section class="divEncabezado">
         <p>©Copyright 2021 - Amalaya Tienda Gourmet - Aceite de Oliva, Especias, Delicatessen - Todos los derechos
