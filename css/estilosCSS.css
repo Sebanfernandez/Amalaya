@@ -20,10 +20,11 @@
   font-family: 'antonio';
   height: 30px;
   padding: 2px 0px 5px 0px;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  max-width: 100% !important;}
 
 .divLogo {
-  display:block;
+  display:inline;
   }
 
 .divTitulo {
@@ -44,16 +45,9 @@
   font-family: 'antonio';
   text-transform: uppercase; }
 
-.nav {
-  font-weight: bolder;
-  background-color: white;
-  display: flex;
-  justify-content: space-around;
-  height: 40px;
-  font-family: 'antonio';
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding-top: 4px; }
+.navbar {
+font-family: 'antonio';
+}
 
 .menuDesplegable {
   background-color: white; }
@@ -96,6 +90,13 @@
   padding: 5px;
   margin-left: 500px; }
 
+.h3Envios {
+  background-color: white;
+  color: olivedrab;
+  border-radius: 10px;
+  font-size: 40px;
+  font-family: 'oswald'; }
+
 .imagenEnvios {
   background-image: url(../Images/envios.jpg.jpg);
   align-items: top;
@@ -104,9 +105,6 @@
 .footer {
   background-image: url(../Images/Fondo2.jpg);
   background-size: cover;
-  display: flex;
-  flex-direction: row;
-  margin: 10px;
   padding: 10px; }
 
 .form {
@@ -124,11 +122,9 @@
 
 .p {
   font-size: 25px;
-  text-align: justify;
+  text-align: center;
   display: inline-block;
-  height: 300px;
   width: 75%;
-  margin: 10px 20px 10px 20px;
   font-family: 'oswald';
   color: whitesmoke; }
 
@@ -191,12 +187,8 @@ ul ul li {
 ul li:hover ul {
   display: block; }
 
-@media  (max-width: 768px) {
-  div, nav, article {
-    width: 100%; } }
-
 .expandir:hover {
-  transform: scale(1.1, 1.1); }
+  transform: scale(1.04, 1.04); }
 
 .rotar:hover {
   transform: rotateZ(360deg);
@@ -209,8 +201,6 @@ ul li:hover ul {
 .carouselExampleIndicators {
   max-width: 100% !important; }
 
-
-/*Creamos el bucle para usar los valores del mapa*/
 .btn--Azul {
   background-color: #074e85; }
 

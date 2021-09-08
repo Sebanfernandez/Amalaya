@@ -16,48 +16,39 @@
     <meta name="description" content="Somos apacionados por la cocina, y por eso decidimos comenzar este emprendimiento comercializando Productos Gourmet y Delicatessen de alta calidad">
 </head>
 <body class="body">
-    <header class="header">
-        <div class="divEncabezado">
-            <p>Amalaya Tienda Gourmet - Aceite de Oliva, Especias, Delicatessen</p>
-        </div>
+  <header class="header">
+    <div class="container fs-4 justify-content-center align-items-center divEncabezado">
+        <p>Amalaya Tienda Gourmet - Aceite de Oliva, Especias, Delicatessen</p>
+    </div>
 
-        <div class="divTitulo">
-            <div class="divLogo rotar">
-                <img src="Images/Logo-amalaya.png" alt="">
-            </div>
-            <div>
-                <h1 class="h11">AMALAYA TIENDA GOURMET</h1>
-            </div>
-            <nav class="divRedes">
-                <nav>
-                    <a href="https://www.instagram.com/amalayatiendagourmet/">
-                        <img src="Images/insta1.png" width="34" height="34">
-                    </a>
-                </nav>
-                <nav>
-                    <a href="https://www.instagram.com/amalayatiendagourmet/">
-                        <img src="Images/face1.png" width="30" height="30">
-                    </a>
-                </nav>
+    <div class="divTitulo"><!--Cambie la class x BEM-->
+        <div class="divLogo mb-2 d-flex align-items-center">
+          <a href="https://www.instagram.com/amalayatiendagourmet/">
+            <img class="me-5" src="Images/insta1.png" width="55px" height="55px">
+          </a>  
+            <img class="rotar d-inline-block align-text-top" width="200px" height="200px" src="Images/Logo-amalaya.png" alt="..." class="img-circle ">
+          <a href="https://www.instagram.com/amalayatiendagourmet/">
+              <img class="ms-5" src="Images/face1.png" width="50px" height="50px">
+          </a>
+        </div>
+    </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fs-4 sticky-top">
+              <div class="container-fluid ">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse  justify-content-center" id="navbarNavAltMarkup">
+                  <div class="navbar-nav ">
+                    <a class="nav-link me-5" href="index.html">Inicio</a>
+                    <a class="nav-link me-5" href="Productos.html">Productos</a>
+                    <a class="nav-link me-5" href="Recetas.html">Recetas</a>
+                    <a class="nav-link me-5" href="Preguntas.html">Preguntas Frecuentes</a>
+                    <a class="nav-link me-5" href="Envios.html">Envíos</a>
+                  </div>
+                </div>
+              </div>
             </nav>
-        </div>
-
-        <div class="nav">
-            <ul>
-            <li><a class="navUl" href="index.html">Inicio</a></li>
-            <li><a class="navUl" href="Productos.html">Productos</a>
-                <ul>
-                    <li class="menuDesplegable"><a class="garrapiñadas" href="Productos.html">Aceites</a></li>
-                    <li class="menuDesplegable"><a class="garrapiñadas" href="Productos.html">Garrapiñadas</a></li>
-                </ul>
-            </li>
-            <li><a class="navUl" href="Recetas.html">Recetas</a></li>
-            <li><a class="navUl" href="Preguntas.html">Preguntas-Frecuentes</a></li>
-            <li><a class="navUl" href="Envios.html">Envios</a></li>
-            </ul>
-        </div>
-
-    </header>
+</header>
 
     <main>
         <div>
@@ -139,36 +130,36 @@
 			</article>
     </main>
 
-    <footer class="footer">
-      <div class="mt-4">
-          <div class="container">
+    <footer class="footer d-flex justify-content-between flex-lg-row flex-sm-column flex-md-column">
+      <div class="d-flex flex-column bd-highlight mb-3">
+          <div class="p-2 bd-highlight bg-light">
               <h2>Contactanos</h2>
           </div>
-          <div class="container">
+          <div class="p-2 bd-highlight bg-light">
               <img src="Images/whatsapp-2.png" width="30" height="30">
-              <h3>Whatsapp: (2281) 30-0689</h3>
+              <h3>Whatsapp: 1161202579</h3>
           </div>
-          <div class="container">
+          <div class="p-2 bd-highlight bg-light">
               <img src="Images/face1.png" width="25" height="25">
               <h3>Facebook: AmalayatiendaGourmet</h3>
           </div>
-          <div class="container">
+          <div class="p-2 bd-highlight bg-light">
               <img src="Images/insta1.png" width="30" height="30">
               <h3>Instagram: @Amalayatiendagourmet</h3>
           </div>
-          </div>
+      </div>
          
-         <div>
-           <img class="m-5 " src="/Images/Logo-amalaya.png" alt="">
+         <div class="d-flex flex-column mb-1">
+           <img class="w-100 p-3" src="/Images/Logo-amalaya.png"  alt="">
          </div>
          <div>
-      <form class="divForm mt-4">
-          <div class="mb-2">
-            <label for="nombre_apellido" class="form-label text-black fs-5">Nombre Completo</label>
+      <form class="d-flex flex-column bd-highlight mb-3">
+          <div class="mb-2 ">
+            <label for="nombre_apellido" class="form-label bg-light  fs-5">Nombre Completo</label>
             <input type="text" id="nombre" name="nombre_apellido" class="form-control" placeholder="Ingresa tu nombre completo">
           </div>
           <div class="mb-3">
-            <label for="Localidad" class="form-label text-black fs-5">Localidad</label>
+            <label for="Localidad" class="form-label bg-light fs-5">Localidad</label>
             <select id="disabledSelect" class="form-select">
               <option value="AZ">AZUL</option>
               <option value="OTR">OLAVARRIA-TANDIL-RAUCH</option>
@@ -181,8 +172,10 @@
       </form> 
       </div>   
     </footer>
-  <section class="divEncabezado">
-        <p>©Copyright 2021 - Amalaya Tienda Gourmet - Aceite de Oliva, Especias, Delicatessen - Todos los derechos reservados</p>
-    </section>
+  <section class="container fs-4 justify-content-center align-items-center divEncabezado">
+      <p>©Copyright 2021 - Amalaya Tienda Gourmet - Todos los derechos reservados</p>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
