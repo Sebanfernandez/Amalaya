@@ -28,9 +28,6 @@
   }
 
 .divTitulo {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   margin: 20px; }
 
 .divRedes {
@@ -94,7 +91,6 @@ font-family: 'antonio';
   background-color: white;
   color: olivedrab;
   border-radius: 10px;
-  font-size: 40px;
   font-family: 'oswald'; }
 
 .imagenEnvios {
@@ -105,7 +101,16 @@ font-family: 'antonio';
 .footer {
   background-image: url(../Images/Fondo2.jpg);
   background-size: cover;
+  display: grid;
+  grid-template-columns: 40% 25% 33%;
+  grid-template-rows: 33%;
   padding: 10px; }
+
+@media (max-width:838px)  {
+.footer {
+    display: block
+  }
+}
 
 .form {
   text-align: right;
@@ -240,8 +245,6 @@ ul li:hover ul {
 .productos__aceites {
   background-color: white;
   color: olivedrab;
-  height: 50px;
-  width: 25%;
   border-radius: 10px;
   text-align: center;
   font-size: 40px;

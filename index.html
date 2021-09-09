@@ -18,18 +18,22 @@
 
 <body class="body media">
     <header class="header">
-        <div class="container fs-4 justify-content-center align-items-center divEncabezado">
+        <div class="container fs-5 justify-content-center align-items-center divEncabezado">
             <p>Amalaya Tienda Gourmet - Aceite de Oliva, Especias, Delicatessen</p>
         </div>
 
-        <div class="divTitulo"><!--Cambie la class x BEM-->
+        <div class="divTitulo d-flex justify-content-evenly"><!--Cambie la class x BEM-->
             <div class="divLogo mb-2 d-flex align-items-center">
               <a href="https://www.instagram.com/amalayatiendagourmet/">
-                <img class="me-5" src="Images/insta1.png" width="55px" height="55px">
+                <img  src="Images/insta1.png" width="55px" height="55px">
               </a>  
-                <img class="rotar d-inline-block align-text-top" width="200px" height="200px" src="Images/Logo-amalaya.png" alt="..." class="img-circle ">
+            </div>  
+            <div>
+              <img class="rotar d-inline-block align-text-top" width="200px" height="200px" src="Images/Logo-amalaya.png" alt="..." class="img-circle ">
+            </div>    
+            <div class="divLogo mb-2 d-flex align-items-center">
               <a href="https://www.instagram.com/amalayatiendagourmet/">
-                  <img class="ms-5" src="Images/face1.png" width="50px" height="50px">
+                  <img  src="Images/face1.png" width="50px" height="50px">
               </a>
             </div>
         </div>
@@ -140,49 +144,49 @@
         </div>
     </main>
 
-    <footer class="footer d-flex justify-content-between flex-lg-row flex-sm-column flex-md-column">
-        <div class="d-flex flex-column bd-highlight mb-3">
-            <div class="p-2 bd-highlight bg-light">
-                <h2>Contactanos</h2>
-            </div>
-            <div class="p-2 bd-highlight bg-light">
-                <img src="Images/whatsapp-2.png" width="30" height="30">
-                <h3>Whatsapp: 1161202579</h3>
-            </div>
-            <div class="p-2 bd-highlight bg-light">
-                <img src="Images/face1.png" width="25" height="25">
-                <h3>Facebook: AmalayatiendaGourmet</h3>
-            </div>
-            <div class="p-2 bd-highlight bg-light">
-                <img src="Images/insta1.png" width="30" height="30">
-                <h3>Instagram: @Amalayatiendagourmet</h3>
-            </div>
-        </div>
-           
-           <div class="d-flex flex-column mb-1">
-             <img class="w-100 p-3" src="/Images/Logo-amalaya.png"  alt="">
-           </div>
-           <div>
-        <form class="d-flex flex-column bd-highlight mb-3">
-            <div class="mb-2 ">
-              <label for="nombre_apellido" class="form-label bg-light  fs-5">Nombre Completo</label>
-              <input type="text" id="nombre" name="nombre_apellido" class="form-control" placeholder="Ingresa tu nombre completo">
-            </div>
+    <footer class="footer ">
+      <div class="mb-3">
+          <div class="p-2 bd-highlight bg-light">
+              <h2>Contactanos</h2>
+          </div>
+          <div class="p-2 bd-highlight bg-light">
+              <img src="Images/whatsapp-2.png" width="30" height="30">
+              <h3>Whatsapp: 1161202579</h3>
+          </div>
+          <div class="p-2 bd-highlight bg-light">
+              <img src="Images/face1.png" width="25" height="25">
+              <h3>Facebook: AmalayatiendaGourmet</h3>
+          </div>
+          <div class="p-2 bd-highlight bg-light">
+              <img src="Images/insta1.png" width="30" height="30">
+              <h3>Instagram: @Amalayatiendagourmet</h3>
+          </div>
+      </div>
+         
+         <div class=" mb-1">
+           <img class="w-100 p-3" src="/Images/Logo-amalaya.png"  alt="">
+         </div>
+         <div>
+      <form class=" mb-3">
+          <div class="mb-2 ">
+            <label for="nombre_apellido" class="form-label bg-light  fs-5">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre_apellido" class="form-control" placeholder="Ingresa tu nombre completo">
+          </div>
+          <div class="mb-3">
+            <label for="Localidad" class="form-label bg-light  fs-5">Localidad</label>
+            <select id="disabledSelect" class="form-select">
+              <option value="AZ">AZUL</option>
+              <option value="OTR">OLAVARRIA-TANDIL-RAUCH</option>
+              <option value="AR">RESTO DEL PAIS</option>
+            </select>
             <div class="mb-3">
-              <label for="Localidad" class="form-label bg-light fs-5">Localidad</label>
-              <select id="disabledSelect" class="form-select">
-                <option value="AZ">AZUL</option>
-                <option value="OTR">OLAVARRIA-TANDIL-RAUCH</option>
-                <option value="AR">RESTO DEL PAIS</option>
-              </select>
-              <div>
-                <textarea type="text" name="comentario" placeholder="Ingresa tu comentario" cols="50" rows="5"></textarea>
+              <textarea class="form-control" placeholder="Ingresa tu comentario" rows="5" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            <button type="enviar" class="btn btn-success">Enviar</button>
-        </form> 
-        </div>   
-      </footer>
-    <section class="container fs-4 justify-content-center align-items-center divEncabezado">
+          <button type="enviar" class="btn btn-success">Enviar</button>
+      </form> 
+      </div>   
+    </footer>
+    <section class="container fs-5 pt-3 justify-content-center align-items-center divEncabezado">
         <p>©Copyright 2021 - Amalaya Tienda Gourmet - Todos los derechos reservados</p>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
