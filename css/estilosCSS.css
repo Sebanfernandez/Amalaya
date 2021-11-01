@@ -251,6 +251,28 @@ ul li:hover ul {
   font-family: 'oswald';
   margin: 10px; }
 
+  .preciosProductos__aceites {
+    color: olivedrab;
+    background-color: olivedrab;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'oswald';
+  }
+
+  .botonPrecios {
+    color: olivedrab;
+    background-color: white;
+    padding: 0px 20px 0px 20px;
+    border-radius: 10px;
+    border-style: dotted;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'oswald';
+    border: medium double olivedrab;
+    box-shadow: 0px 5px 5px black;
+  }
+
+
 .imagenGarrapiñadas {
   padding: 10px 30px 10px 0px;
   border: solid whitesmoke;
