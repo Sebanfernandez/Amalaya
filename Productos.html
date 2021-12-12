@@ -7,6 +7,7 @@
     <meta name="keywords"  content="Oliva, El-Faro, Gourmet, Garrapiñadas">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/estilosCSS.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&display=swap" rel="stylesheet">
@@ -41,7 +42,7 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon "></span>
                   </button>
-                  <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                  <div class="collapse navbar-collapse align-items-center  justify-content-center id="navbarNavAltMarkup">
                     <div class="navbar-nav ">
                       <a class="nav-link me-5" href="index.html">Inicio</a>
                       <a class="nav-link me-5" href="Productos.html">Productos</a>
@@ -49,125 +50,153 @@
                       <a class="nav-link me-5" href="Preguntas.html">Preguntas Frecuentes</a>
                       <a class="nav-link me-5" href="Envios.html">Envíos</a>
                     </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" ata-target="#navbarCollapse"                               aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                             <div class="dropdown">
+                              <ul class="navbar-nav mr-auto">
+                                <li class="nav-item dropdown">
+                              <img src="Images/Carrito.png" height="70px"
+                              width="80px" class="btn  dropdown-toggle" type="button" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              </img>
+                              <div id="carrito" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <table id="lista-carrito" class="table">
+                                  <thead>
+                                      <tr>
+                                          <th>Imagen</th>
+                                          <th>Nombre</th>
+                                          <th>Precio</th>
+                                          <th></th>
+                                      </tr>
+                                  </thead>
+                                  <tbody></tbody>
+                              </table>
+                              <a href="#" id="vaciar-carrito" class="d-flex m-1 btn btn-primary btn-block">Vaciar Carrito</a>
+                              <a href="#" id="procesar-pedido" class="d-flex m-1 btn btn-danger btn-block">Procesar   Compra</a>
+                              </div>
+                                </li>
+                              </ul>
+                            </div>
+                  </div>
                   </div>
                 </div>
               </nav>
   </header>
 
     <main>
-        <div >
+        <div  >
             <h2 class="productos mt-2">Nuestros Productos</h2> <!--Cambie la class x BEM-->
         </div>
-        <section>
+        <section id="todosLosProductos">
             <h3 class="productos__aceites d-inline-flex justify-content-start text-center p-3">Aceites</h3><!--Cambie la class x BEM-->
             <article>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div class="col">
                   <div class="card h-100">
-                    <img src="Images/pet1l.png" class="card-img-top" alt="...">
+                    <img id="fotoProductos" src="Images/pet1l.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Botella PET 1L</h5>
+                      <h5 id="productoPet1L" class="card-title">Botella PET 1L</h5>
                       <p class="card-text">Práctico, indispensable en cualquier cocina. Presentación: caja de 12 unidades de botellas PET de 1 lt.</p>
                     <div class="preciosProductos__aceites p-2">
-                      <P style="color: whitesmoke;">COMPRAR</P>
-                      <button class="botonPrecios" >$710</button>
+                      <P class="precioProducto" style="color: whitesmoke;">$<span>710</span></P>
+                      <a href="" class="btn btn-block botonPrecios btn-primary agregar-carrito" data-id="1">Comprar</a>
                     </div>
                     </div>
                   </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                      <img src="Images/oliva-vidrio.jpg" class="card-img-top" alt="...">
+                      <img id="fotoProductos" src="Images/oliva-vidrio.jpg" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">Botella Vidrio 0,5L</h5>
                         <p class="card-text">Ideal para llevar a la mesa.Elegante y discreta. Presentación: 12 unidades de botellas de vidrio ambar de ½ lt.</p>
                         <div class="preciosProductos__aceites p-2">
-                          <P style="color: whitesmoke;">COMPRAR</P>
-                          <button class="botonPrecios" >$520</button>
+                          <P class="precioProducto" style="color: whitesmoke;">$<span>520</span></P>
+                          <a href="" class="btn btn-block botonPrecios btn-primary agregar-carrito" data-id="2">Comprar</a>
                         </div>
                           </div>
                     </div>
                   </div>
                 <div class="col">
                   <div class="card h-100">
-                    <img src="Images/pet3l.jpg" class="card-img-top" alt="...">
+                    <img id="fotoProductos" src="Images/pet3l.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Bidon 3L</h5>
                       <p class="card-text">Para familias numerosas o cocineros exigentes, profesionales o aficionados. Presentación: caja de 4 unidades.</p>
                       <div class="preciosProductos__aceites p-2">
-                        <P style="color: whitesmoke;">COMPRAR</P>
-                        <button class="botonPrecios" >$1990</button>
+                        <P class="precioProducto" style="color: whitesmoke;">$<span>1990</span></P>
+                        <a href="" class="btn btn-block botonPrecios btn-primary agregar-carrito" data-id="3">Comprar</a>
                       </div>  
                     </div>
                   </div>
                 </div>
                 <div class="col">
                   <div class="card h-100">
-                    <img src="Images/pet5l.png" class="card-img-top" alt="...">
+                    <img id="fotoProductos" src="Images/pet5l.png" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Bidon de 5L</h5>
-                      <p class="card-text">Solo para fanáticos. Presentación: caja de 4 unidades de bidones PET con manija de 5 lt.</p>
+                      <p class="card-text">Solo para gastronómicos y fanáticos. Presentación: caja de 4 unidades de bidones PET con manija de 5 lt.</p>
                       <div class="preciosProductos__aceites p-2">
-                        <P style="color: whitesmoke;">COMPRAR</P>
-                        <button class="botonPrecios" >$3200</button>
+                        <P class="precioProducto" style="color: whitesmoke;">$<span>3200</span></P>
+                        <a href="" class="btn btn-block botonPrecios btn-primary agregar-carrito" data-id="4">Comprar</a>
                       </div>  
                     </div>
                   </div>
                 </div>
               </div>
             </article>
-            <h3 class="productos__aceites d-inline-flex justify-content-start text-center p-3">Garrapiñadas</h3>
 
+            <h3 class="productos__aceites d-inline-flex justify-content-start text-center p-3">Garrapiñadas</h3>
             <article class="mb-5">
                 <div class="row row-cols-1 row-cols-md-4">
                     <div class="col">
                       <div class="card h-100">
-                        <img src="Images/bocado-almendra.jpg" class="card-img-top" alt="...">
+                        <img id="fotoProductos" src="Images/bocado-almendra.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Garrapiñada de Almendras</h5>
                           <p class="card-text">Ideal para llevar a cualquier lado que vayas. Envase hermetico de 100g.</p>
                           <div class="preciosProductos__aceites p-2">
-                            <P style="color: whitesmoke;">COMPRAR</P>
-                            <button class="botonPrecios" >$250</button>
+                            <P class="precioProducto" style="color: whitesmoke;">$<span>250</span></P>
+                            <a href="" class="btn btn-block botonPrecios btn-primary agregar-carrito" data-id="5">Comprar</a>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                          <img src="Images/bocado-nuez.jpg" class="card-img-top" alt="...">
+                          <img id="fotoProductos" src="Images/bocado-nuez.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
                             <h5 class="card-title">Garrapiñada de Nuez</h5>
                             <p class="card-text">Ideal para llevar a cualquier lado que vayas. Envase hermetico de 100g.</p>
                             <div class="preciosProductos__aceites p-2">
-                              <P style="color: whitesmoke;">COMPRAR</P>
-                              <button class="botonPrecios" >$250</button>
+                              <P class="precioProducto" style="color: whitesmoke;">$<span>250</span></P>
+                              <a href="" class="btn btn-block botonPrecios btn-primary agregar-carrito" data-id="6">Comprar</a>
                             </div>
                           </div>
                         </div>
                       </div>
                     <div class="col">
                       <div class="card h-100">
-                        <img src="Images/bocado-mani.jpg" class="card-img-top" alt="...">
+                        <img id="fotoProductos" src="Images/bocado-mani.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Garrapiñada de Maní</h5>
                           <p class="card-text">Ideal para llevar a cualquier lado que vayas. Envase hermetico de 100g.</p>
                           <div class="preciosProductos__aceites p-2">
-                            <P style="color: whitesmoke;">COMPRAR</P>
-                            <button class="botonPrecios" >$120</button>
+                            <P class="precioProducto" style="color: whitesmoke;">$<span>120</span></P>
+                            <a href="" class="btn btn-block botonPrecios btn-primary agregar-carrito" data-id="7">Comprar</a>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="card h-100">
-                        <img src="Images/bocado-girasol.jpg" class="card-img-top" alt="...">
+                        <img id="fotoProductos" src="Images/bocado-girasol.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Garrapiñada de Girasol</h5>
                           <p class="card-text">Ideal para llevar a cualquier lado que vayas. Envase hermetico de 100g.</p>
                           <div class="preciosProductos__aceites p-2">
-                            <P style="color: whitesmoke;">COMPRAR</P>
-                            <button class="botonPrecios" >$120</button>
+                            <P class="precioProducto" style="color: whitesmoke;">$<span>120</span></P>
+                            <a href="" class="btn btn-block botonPrecios btn-primary agregar-carrito" data-id="8">Comprar</a>
                           </div>
                         </div>
                       </div>
@@ -222,8 +251,13 @@
   <section class="container fs-5 pt-3 justify-content-center align-items-center divEncabezado">
       <p>©Copyright 2021 - Amalaya Tienda Gourmet - Todos los derechos reservados</p>
   </section>
-<script src="carrito.js"></script>    
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+  <script src="jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="carrito.js"></script> 
+  <script src="pedido.js"></script> 
+  <script src="compra.js"></script> 
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

@@ -1,75 +1,244 @@
-class Producto {
-    constructor(nombre, precio, cantidad) {
-        this.nombre  = nombre.toUpperCase();
-        this.precio  = parseFloat(precio);
-        this.vendido = false;
-        this.cantidad = parseFloat(cantidad);
-    }
-    sumaIva() {
-        console.log("El Precio con IVA de " + (this.nombre) + " es de $" + (this.precio * 1.21));
-    }
-    vender() {
-        console.log(this.vendido = true);
-    }
-    precioSugerido() {
-        console.log("El precio sugerido al publico de " + (this.nombre) + " con IVA icluido es de $ " + (this.precio * 1.21 * 1.4));
+class Carrito {
+
+
+comprarProducto(e){
+    e.preventDefault();
+    //Para agregar al carrito
+    if(e.target.classList.contains('botonPrecios')){
+        const producto = e.target.parentElement.parentElement.parentElement;
+        //Enviamos el producto seleccionado para tomar sus datos
+        this.leerDatosProducto(producto);
     }
 }
-//Declaramos un array de productos para almacenar objetos, podemos hacerlo asi:
 
-const productos = [];
-productos.push(new Producto("Aceite Pet 1L", 710, 24));
-productos.push(new Producto("Aceite Vidrio 1/2L", 520, 12));
-productos.push(new Producto("Aceite Pet 3L", 1990, 2));
-productos.push(new Producto("Aceite Pet 5L", 3200, 0));
-productos.push(new Producto("Garrapiñada de Almendras", 250, 10));
-productos.push(new Producto("Garrapiñada de Nuez", 250, 10));
-productos.push(new Producto("Garrapiñada de Maní", 120, 15));
-productos.push(new Producto("Garrapiñada de Girasol", 120, 15));
+//Leer datos del producto
+leerDatosProducto(producto){
+    const infoProducto = {
+        imagen : producto.querySelector('#fotoProductos').src,
+        titulo: producto.querySelector('h5').textContent,
+        precio: producto.querySelector('.precioProducto span').textContent,
+        id: producto.querySelector('a').getAttribute('data-id'),
+        cantidad: 1
+    }
+    let productosLS;
+    productosLS = this.obtenerProductosLocalStorage();
+    productosLS.forEach(function (productoLS){
+        if(productoLS.id === infoProducto.id){
+            productosLS = productoLS.id;
+        }
+    });
 
-// O podemos predirlo mediante un prompt:
+    if(productosLS === infoProducto.id){
+        Swal.fire({
+            type: 'info',
+            title: 'Oops...',
+            text: 'El producto ya esta en el carrito!',
+            timer: 1000,
+            showConfirmButton: false
+          })
+    }
+    else {
+        this.insertarCarrito(infoProducto);
+    }
 
-var nombreP = prompt("Ingrese el nombre del producto ")
-var precioP = prompt("Ingrese el precio del producto")
-var cantidadP = prompt("Ingrese el stock del producto")
-productos.push(new Producto (nombreP, precioP, cantidadP))
-
-//Iteramos el array con for...of para modificarlos a todos
-for (const producto of productos){
-    producto.sumaIva();
-    producto.precioSugerido();
 }
 
-
-// Alertamos sobre un producto sin STOCK
-
-var sinStock = productos.filter(Producto => Producto.cantidad == 0);
-
-for (const producto of sinStock){
-    alert("El Producto " + producto.nombre + " no cuenta con stock")
+insertarCarrito(producto){
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>
+            <img src="${producto.imagen}" width=100>
+        </td>
+        <td>${producto.titulo}</td>
+        <td>${producto.precio}</td>
+        <td>
+            <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
+        </td>
+    `;
+    listaProductos.appendChild(row);
+    this.guardarProductosLocalStorage(producto);
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Producto cargado al carrito',
+        showConfirmButton: false,
+        timer: 1500
+      })
 }
 
-//Buscamos un producto
+ //Eliminar el producto del carrito en el DOM
+ eliminarProducto(e){
+    e.preventDefault();
+    let producto, productoID;
+    if(e.target.classList.contains('borrar-producto')){
+        e.target.parentElement.parentElement.remove();
+        producto = e.target.parentElement.parentElement;
+        productoID = producto.querySelector('a').getAttribute('data-id');
+    }
+    this.eliminarProductoLocalStorage(productoID);
+    this.calcularTotal();
 
-var ingresar =  prompt("Ingrese el nombre del producto que desea buscar")
-var prodIngresado = productos.filter(producto => producto.nombre.includes(ingresar))
-console.log(prodIngresado); 
-console.log();("Estos son los productos que coinciden con su busqueda:") 
-
-for (const producto of prodIngresado){
-    console.log();("Nombre: " + producto.nombre) 
 }
 
+//Elimina todos los productos
+vaciarCarrito(e){
+    e.preventDefault();
+    while(listaProductos.firstChild){
+        listaProductos.removeChild(listaProductos.firstChild);
+    }
+    this.vaciarLocalStorage();
 
-// Ordenamos de mayor a menor la cantidad
+    return false;
+}
 
-var ordenCantidad = []
-ordenCantidad = productos.map(elemento => elemento);
-ordenCantidad.sort(function(a, b){
-return b.cantidad - a.cantidad
-})
-console.log();("Productos ordenados de mayor a menor cantidad existente: ");
+//Almacenar en el LS
+guardarProductosLocalStorage(producto){
+    let productos;
+    //Toma valor de un arreglo con datos del LS
+    productos = this.obtenerProductosLocalStorage();
+    //Agregar el producto al carrito
+    productos.push(producto);
+    //Agregamos al LS
+    localStorage.setItem('productos', JSON.stringify(productos));
+}
 
-for (const producto of ordenCantidad){
-    console.log();("Nombre:" + producto.nombre)
+//Comprobar que hay elementos en el LS
+obtenerProductosLocalStorage(){
+    let productoLS;
+
+    //Comprobar si hay algo en LS
+    if(localStorage.getItem('productos') === null){
+        productoLS = [];
+    }
+    else {
+        productoLS = JSON.parse(localStorage.getItem('productos'));
+    }
+    return productoLS;
+}
+
+//Mostrar los productos guardados en el LS
+leerLocalStorage(){
+    let productosLS;
+    productosLS = this.obtenerProductosLocalStorage();
+    productosLS.forEach(function (producto){
+        //Construir plantilla
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+                <img src="${producto.imagen}" width=100>
+            </td>
+            <td>${producto.titulo}</td>
+            <td>${producto.precio}</td>
+            <td>
+                <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
+            </td>
+        `;
+        listaProductos.appendChild(row);
+    });
+}
+
+//Mostrar los productos guardados en el LS en compra.html
+leerLocalStorageCompra(){
+    let productosLS;
+    productosLS = this.obtenerProductosLocalStorage();
+    productosLS.forEach(function (producto){
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+                <img src="${producto.imagen}" width=100>
+            </td>
+            <td>${producto.titulo}</td>
+            <td>${producto.precio}</td>
+            <td>
+                <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
+            </td>
+            <td id='subtotales'>${producto.precio * producto.cantidad}</td>
+            <td>
+                <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
+            </td>
+        `;
+        listaCompra.appendChild(row);
+    });
+}
+
+//Eliminar producto por ID del LS
+eliminarProductoLocalStorage(productoID){
+    let productosLS;
+    //Obtenemos el arreglo de productos
+    productosLS = this.obtenerProductosLocalStorage();
+    //Comparar el id del producto borrado con LS
+    productosLS.forEach(function(productoLS, index){
+        if(productoLS.id === productoID){
+            productosLS.splice(index, 1);
+        }
+    });
+
+    //Añadimos el arreglo actual al LS
+    localStorage.setItem('productos', JSON.stringify(productosLS));
+}
+
+//Eliminar todos los datos del LS
+vaciarLocalStorage(){
+    localStorage.clear();
+}
+
+//Procesar pedido
+procesarPedido(e){
+    e.preventDefault();
+
+    if(this.obtenerProductosLocalStorage().length === 0){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'El carrito esta vacio, agrega un producto!',
+            timer: 2000,
+            showConfirmButton: false
+          })
+    }
+    else {
+        location.href = "compra.html";
+    }
+}
+
+//Calcular montos
+calcularTotal(){
+    let productosLS;
+    let total = 0, iva = 0, subtotal = 0;
+    productosLS = this.obtenerProductosLocalStorage();
+    for(let i = 0; i < productosLS.length; i++){
+        let element = Number(productosLS[i].precio * productosLS[i].cantidad);
+        total = total + element;
+        
+    }
+    
+    iva = parseFloat(total * 0.21).toFixed(2);
+    subtotal = parseFloat(total-iva).toFixed(2);
+
+    document.getElementById('subtotal').innerHTML = "$ " + subtotal;
+    document.getElementById('iva').innerHTML = "$ " + iva;
+    document.getElementById('total').value = "$ " + total.toFixed(2);
+}
+
+obtenerEvento(e) {
+    e.preventDefault();
+    let id, cantidad, producto, productosLS;
+    if (e.target.classList.contains('cantidad')) {
+        producto = e.target.parentElement.parentElement;
+        id = producto.querySelector('a').getAttribute('data-id');
+        cantidad = producto.querySelector('input').value;
+        let actualizarMontos = document.querySelectorAll('#subtotales');
+        productosLS = this.obtenerProductosLocalStorage();
+        productosLS.forEach(function (productoLS, index) {
+            if (productoLS.id === id) {
+                productoLS.cantidad = cantidad;                    
+                actualizarMontos[index].innerHTML = Number(cantidad * productosLS[index].precio);
+            }    
+        });
+        localStorage.setItem('productos', JSON.stringify(productosLS));
+        
+    }
+    else {
+        console.log("click afuera");
+    }
+}
 }
